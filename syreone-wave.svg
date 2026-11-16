@@ -1,26 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#000000"/>
-      <stop offset="1" stop-color="#140000"/>
-    </linearGradient>
-    <linearGradient id="w1" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ff1a1a" stop-opacity="0.9"/>
-      <stop offset="1" stop-color="#4d0000" stop-opacity="0.9"/>
-    </linearGradient>
-    <linearGradient id="w2" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#b30000" stop-opacity="0.7"/>
-      <stop offset="1" stop-color="#1a0000" stop-opacity="0.7"/>
-    </linearGradient>
-    <linearGradient id="w3" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#660000" stop-opacity="0.6"/>
-      <stop offset="1" stop-color="#000000" stop-opacity="0.6"/>
-    </linearGradient>
-    <filter id="glow" x="-20%" y="-50%" width="140%" height="200%">
-      <feGaussianBlur stdDeviation="6" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
     <style>
+      svg { --fg: #000000; --bg: #ffffff; }
+      @media (prefers-color-scheme: dark) { svg { --fg: #ffffff; --bg: #000000; } }
+      .w3 { fill: var(--fg); opacity: 0.15; }
+      .w2 { fill: var(--fg); opacity: 0.35; }
+      .w1 { fill: var(--fg); opacity: 0.85; }
       .wave { animation: slide linear infinite; }
       .a { animation-duration: 14s; }
       .b { animation-duration: 9s; animation-direction: reverse; }
@@ -30,7 +15,7 @@
       .title {
         font: 900 84px 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
         letter-spacing: 18px;
-        fill: #ff1f1f;
+        fill: var(--fg);
         animation: pulse 3s ease-in-out infinite;
       }
       @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.65; } }
@@ -38,20 +23,19 @@
       .sub {
         font: 500 18px 'Consolas', 'Courier New', monospace;
         letter-spacing: 4px;
-        fill: #ffffff;
-        opacity: 0.75;
+        fill: var(--fg);
+        opacity: 0.6;
       }
-      .line { stroke: #ff1f1f; stroke-width: 2; stroke-dasharray: 260; stroke-dashoffset: 260;
+      .line { stroke: var(--fg); stroke-width: 2; stroke-dasharray: 260; stroke-dashoffset: 260;
               animation: draw 3s ease-out forwards; }
       @keyframes draw { to { stroke-dashoffset: 0; } }
 
-      .dot { fill: #ff2b2b; animation: rise linear infinite; }
+      .dot { fill: var(--fg); animation: rise linear infinite; }
       @keyframes rise { from { transform: translateY(0); opacity: 0; } 20% { opacity: 0.9; }
                         to { transform: translateY(-260px); opacity: 0; } }
     </style>
   </defs>
 
-  <rect width="1200" height="300" fill="url(#bg)"/>
 
   <!-- floating embers -->
   <circle class="dot" cx="120" cy="300" r="2" style="animation-duration:7s"/>
@@ -62,17 +46,17 @@
   <circle class="dot" cx="1100" cy="300" r="1.5" style="animation-duration:9.5s;animation-delay:5s"/>
 
   <!-- title -->
-  <g filter="url(#glow)">
+  <g>
     <text class="title" x="609" y="125" text-anchor="middle">SYREONE</text>
   </g>
   <line class="line" x1="470" y1="152" x2="730" y2="152"/>
   <text class="sub" x="600" y="182" text-anchor="middle">github.com/syreone</text>
 
   <!-- waves (period 600px, translated -600px for a seamless loop) -->
-  <path class="wave a" fill="url(#w3)"
+  <path class="wave a w3"
         d="M0 215 Q150 175 300 215 T600 215 T900 215 T1200 215 T1500 215 T1800 215 V300 H0 Z"/>
-  <path class="wave b" fill="url(#w2)"
+  <path class="wave b w2"
         d="M0 240 Q150 205 300 240 T600 240 T900 240 T1200 240 T1500 240 T1800 240 V300 H0 Z"/>
-  <path class="wave c" fill="url(#w1)"
+  <path class="wave c w1"
         d="M0 262 Q150 240 300 262 T600 262 T900 262 T1200 262 T1500 262 T1800 262 V300 H0 Z"/>
 </svg>
