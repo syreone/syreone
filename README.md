@@ -1,3 +1,5 @@
+<p align="center"><img src="./syreone-wave.svg" width="100%" alt="SYREONE"/></p>
+
 ## Hi there 👋
 
 <!--
