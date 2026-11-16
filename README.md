@@ -1,7 +1,5 @@
 <p align="center"><img src="./syreone-wave.svg" width="100%" alt="SYREONE"/></p>
 
-## Hi there 👋
-
 <!--
 **syreone/syreone** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
