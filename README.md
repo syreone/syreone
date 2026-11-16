@@ -1,4 +1,4 @@
-<p align="center"><img src="./banner-bw.svg" width="100%" alt="SYREONE"/></p>
+<p align="center"><img src="./banner-tag.svg" width="100%" alt="SYREONE"/></p>
 
 <!--
 **syreone/syreone** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
